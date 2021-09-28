@@ -1,0 +1,31 @@
+{
+  "name": "the-noren-otoko-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build",
+    "serve": "node dist/index.js",
+    "start": "npm run build && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shzawa/the-noren-otoko-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shzawa/the-noren-otoko-bot/issues"
+  },
+  "homepage": "https://github.com/shzawa/the-noren-otoko-bot#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.7.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.1",
+    "typescript": "^4.4.3"
+  }
+}
