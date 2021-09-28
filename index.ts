@@ -16,25 +16,35 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.view("modal-id", async ({ ack, view, logger }) => {
-  logger.info(`Submitted data: ${view.state.values}`);
-  await ack();
-});
-
 app.event('member_joined_channel', async ({ event, client }) => {
-  console.log('YOSOKO!!')
+  const text = `
+（´-\`）.｡oO（<@${event.user}>)
+\`\`\`
+╭━━━━━━━━━━━╮
+よっ、やってる？
+╰━━ｖ━━━━━━━━╯
+||二二二二||二二二二||ﾆ
+||＿＿＿＿||＿＿＿＿||_
+　　　ﾋﾟﾗｯ
+｜　＿＿＿人　　　　｜
+｜ ｜　＿/　＼　　　｜
+｜ ｜／ﾆ⊃／￣＼ヽ　｜
+｜ // ))ﾌ/-　 - ＼＼｜
+⊥ﾉ/ ノ ｜(･) (･) ＼⊥
+　｜｜　｜ 〈　　 |
+　｜｜　 ＼ ワ　 ノ
+　｜ ￣￣￣　　　￣ヽ
+　 ￣￣￣|　　　　| |\`\`\``
 
-  const text =  `YOSOKO!! <@${event.user}>`
   try {
     await client.chat.postMessage({
       channel: 'C02FG2RV4GP',
-      text
+      text,
     })
   } catch(e) {
     console.dir({e}, {depth: null});
     if (e instanceof Error) throw e;
   }
-  console.log({text})
 });
 
 (async () => {
